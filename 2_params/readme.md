@@ -25,8 +25,8 @@ drwxr-xr-x 6 root root    0 Dec 22 17:09 ..
 -rw-rw---- 1 root root 4096 Dec 22 17:09 param_int
 ```
 
-Note that only `params_int` has `rw` for group (as coded in the source) and that 
-`params_short` does not even appear (it has access flags 0 in the code).
+Note that only `params_int` has `rw` for group (as coded in the source).
+Also note that `params_short` does not even appear (it has access flags 0 in the code).
 
 ## Test int
 
@@ -63,7 +63,6 @@ hi there
 
 You might want to try `echo -n "hi there"` to get rid of the newline.
 
-
 ## Test bools
 
 At first the bools array is empty (count is 0). 
@@ -82,7 +81,7 @@ $ sudo cat param_bools
 N,Y,Y
 ```
 
-We can also use 0 and 1 for bools, but not T and Finally
+We can also use 0 and 1 for bools, but not T and F, True and False, or true and false.
 
 ```
 $ echo "0,1,0" | sudo tee param_bools
@@ -97,6 +96,8 @@ $ echo "true,false" | sudo tee param_bools
 true,false
 tee: param_bools: Invalid argument
 ```
+
+## Check values
 
 Upon exit, we see all values
 
