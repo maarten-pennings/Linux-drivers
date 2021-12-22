@@ -1,6 +1,6 @@
 # 1 Hello world 
 Inspiration from [The Linux Kernel Module Programming Guide](https://sysprog21.github.io/lkmpg/)
-and [embetronicx](https://embetronicx.com/linux-device-driver-tutorials/),
+and [embetronicx](https://embetronicx.com/linux-device-driver-tutorials/), section 
 [module](https://embetronicx.com/tutorials/linux/device-drivers/linux-device-driver-tutorial-part-2-first-device-driver/).
 
 ## Building
@@ -8,6 +8,7 @@ and [embetronicx](https://embetronicx.com/linux-device-driver-tutorials/),
  - make with `sudo make`
  
 ## Test inserting
+
 ```
 $ dmesg
 ...
@@ -75,7 +76,7 @@ int  init_module   (void) { ... }
 void cleanup_module(void) { ... }
 ```
 
-but it seems that we the preferred way these days is
+but it seems that the preferred way these days is
 
 ```
 #include <linux/module.h>
@@ -93,6 +94,7 @@ where the function names `mod_init` and `mod_exit` are free and their scope `sta
 ### printk
 
 In the past, we saw calls to `printk`
+
 ```
   printk(KERN_INFO  "text\n" );
 ```
